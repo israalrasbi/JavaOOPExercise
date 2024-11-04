@@ -1,0 +1,61 @@
+Objective:
+Develop a school system that can store detailed information about schools, students, subjects, and their marks using nested HashMaps.
+
+Requirements:
+School Details:
+
+Each school should have a name and address etc.
+
+Student Details:
+
+Each student will have an ID, name, grade, and age etc
+
+*Students should be grouped by school in the data structure.
+
+Subject Details:
+
+Each subject should include a name, teacher, and credit hours etc.
+
+*Subjects will be stored under each student in the data structure.
+
+Marks Details:
+
+Each subject for each student will contain marks, grade (e.g., A, B, etc.), and optional comments etc.
+
+*Marks data should be organized so that it can be easily retrieved and calculated.
+
+Functionalities:
+Add School:
+
+Input a school name and address.
+
+*Add this school as a key in the main HashMap.
+
+Add Student:
+
+Input details for a student, including their ID, name, grade, and age.
+
+*Store this data within the specific school’s HashMap.
+
+Add Subject and Marks:
+
+For a specific student, input the subject name, teacher name, credit hours, marks, grade, and comments.
+
+*Store these subject details under the student's entry.
+
+Retrieve Marks for a Student in a Subject:
+
+Input the school name, student ID, and subject name.
+
+*Retrieve and display the subject’s marks, grade, and comments for the specified student.
+
+Calculate Average Marks for a Student:
+
+Input the school name and student ID.
+
+*Calculate the average marks across all subjects for that student and display it.
+
+Expected Outcome:
+The system should effectively use nested HashMaps to handle complex data without needing custom classes, allowing for detailed tracking and calculation of information across schools, students, and subjects.
+
+Make sure you store atleast 5 schools  with 5 students each.
