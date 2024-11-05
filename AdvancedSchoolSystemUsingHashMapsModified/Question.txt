@@ -1,0 +1,36 @@
+Objective:
+Expand the existing school system to include the management of teachers, libraries, and book assignments using nested HashMaps.
+
+Requirements:
+Teacher Details:
+Each teacher should have an ID, name, subject expertise, and years of experience, etc.
+
+Teachers should be associated with specific schools and subjects.
+
+Functionality to Implement:
+
+Add Teacher: Input and store teacher details under each school.
+
+Assign Teacher to Subject: Associate a teacher with a specific subject under a student's entry in a school.
+
+Library Details:
+Each school should have a library with a collection of books.
+
+Each book should have an ID, title, author, publication year, and availability status, etc.
+
+Functionality to Implement:
+
+Add Book to Library: Input book details and add them to the library under a specific school.
+
+List Available Books: Display all available books in the library of a specific school.
+
+Book Assignment to Students:
+Books can be issued to students, and the system should track which books are assigned to which students.
+
+Functionality to Implement:
+
+Assign Book to Student: Input book ID, school name, and student ID to issue the book to a student.
+
+Return Book: Mark a book as returned and update its availability status.
+
+List Assigned Books for Student: Display all books currently assigned to a specific student in a school.
