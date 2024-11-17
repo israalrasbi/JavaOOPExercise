@@ -4,6 +4,11 @@ public class CircleData {
     private double radius;
     private BaseData baseData;
 
+    public CircleData(double radius, BaseData baseData) {
+        this.radius = radius;
+        this.baseData = baseData;
+    }
+
     public double getRadius() {
         return radius;
     }

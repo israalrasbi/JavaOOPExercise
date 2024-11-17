@@ -6,6 +6,13 @@ public class MotionData {
     private double time;
     private BaseData baseData;
 
+    public MotionData(double initialVelocity, double acceleration, double time, BaseData baseData) {
+        this.initialVelocity = initialVelocity;
+        this.acceleration = acceleration;
+        this.time = time;
+        this.baseData = baseData;
+    }
+
     public double getInitialVelocity() {
         return initialVelocity;
     }

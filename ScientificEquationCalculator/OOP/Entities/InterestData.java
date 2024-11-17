@@ -6,6 +6,13 @@ public class InterestData {
     private double time;
     private PhysicsData physicsData;
 
+    public InterestData(double principal, double rate, double time, PhysicsData physicsData) {
+        this.principal = principal;
+        this.rate = rate;
+        this.time = time;
+        this.physicsData = physicsData;
+    }
+
     public double getPrincipal() {
         return principal;
     }
