@@ -9,6 +9,10 @@ public class ForceCalculator implements CalculatorInterface {
     //this class will use PhysicsData
     private PhysicsData physicsData;
 
+    public ForceCalculator(PhysicsData physicsData) {
+        this.physicsData = physicsData;
+    }
+
     public double calculateForce() {
         double m = physicsData.getMass();
         double a = physicsData.getAcceleration();

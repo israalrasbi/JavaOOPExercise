@@ -9,6 +9,10 @@ public class SimpleInterestCalculator implements CalculatorInterface {
     //this class will use InterestData
     private InterestData interestData;
 
+    public SimpleInterestCalculator(InterestData interestData) {
+        this.interestData = interestData;
+    }
+
     public double calculateSimpleInterest() {
         double P = interestData.getPrincipal();
         double R = interestData.getRate();

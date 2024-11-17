@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class FinalVelocityCalculator implements CalculatorInterface {
     private MotionData motionData;
 
+    public FinalVelocityCalculator(MotionData motionData) {
+        this.motionData = motionData;
+    }
     public double calculateFinalVelocity() {
         double u = motionData.getInitialVelocity();
         double a = motionData.getAcceleration();

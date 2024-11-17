@@ -7,6 +7,9 @@ import java.util.Scanner;
 
 public class DensityCalculator implements CalculatorInterface {
     private PhysicsData physicsData;
+    public DensityCalculator(PhysicsData physicsData) {
+        this.physicsData = physicsData;
+    }
 
     public double calculateDensity() {
         double mass = physicsData.getMass();

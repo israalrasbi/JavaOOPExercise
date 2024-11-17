@@ -9,12 +9,16 @@ public class AreaOfCircleCalculator implements CalculatorInterface {
     //this class will use CircleData
     private CircleData circleData;
 
+    public AreaOfCircleCalculator(CircleData circleData) {
+        this.circleData = circleData;
+    }
+
     public double calculateAreaOfCircle(){
         double PI = Math.PI;
         double radius = circleData.getRadius();
         return PI*radius;
     }
-    
+
     @Override
     public void calculate() {
         Scanner scanner = new Scanner(System.in);
