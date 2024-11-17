@@ -10,10 +10,11 @@ public class PhysicsData {
         return volume;
     }
 
-    public PhysicsData(double mass, double acceleration, MotionData motionData) {
+    public PhysicsData(double mass, double acceleration, MotionData motionData, double volume) {
         this.mass = mass;
         this.acceleration = acceleration;
         this.motionData = motionData;
+        this.volume = volume;
     }
 
     public void setVolume(double volume) {
