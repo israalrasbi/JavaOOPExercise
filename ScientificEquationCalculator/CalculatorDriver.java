@@ -9,50 +9,6 @@ public class CalculatorDriver {
 
         System.out.println("Welcome to the Scientific Equation Calculator!");
 
-        //input for MotionData
-        System.out.println("\n--- Enter Motion Data ---");
-        System.out.print("Enter Initial Velocity (u): ");
-        double initialVelocity = scanner.nextDouble();
-        System.out.print("Enter Acceleration (a): ");
-        double acceleration = scanner.nextDouble();
-        System.out.print("Enter Time (t): ");
-        double time = scanner.nextDouble();
-        MotionData motionData = new MotionData(initialVelocity, acceleration, time, new BaseData("1", "Motion Data Example"));
-
-        //input for CircleData
-        System.out.println("\n--- Enter Circle Data ---");
-        System.out.print("Enter Radius (r): ");
-        double radius = scanner.nextDouble();
-        CircleData circleData = new CircleData(radius, new BaseData("2", "Circle Data Example"));
-
-        //input for InterestData
-        System.out.println("\n--- Enter Interest Data ---");
-        System.out.print("Enter Principal (P): ");
-        double principal = scanner.nextDouble();
-        System.out.print("Enter Rate (R): ");
-        double rate = scanner.nextDouble();
-        System.out.print("Enter Time (T): ");
-        double interestTime = scanner.nextDouble();
-
-        //input for PhysicsData
-        System.out.println("\n--- Enter Physics Data ---");
-        System.out.print("Enter Mass (m): ");
-        double mass = scanner.nextDouble();
-
-        System.out.print("Enter Volume (v): ");
-        double volume = scanner.nextDouble();
-        PhysicsData physicsData = new PhysicsData(mass, acceleration, motionData, volume);
-
-        InterestData interestData = new InterestData(principal, rate, interestTime, physicsData);
-
-        //calculators
-        FinalVelocityCalculator finalVelocityCalculator = new FinalVelocityCalculator(motionData);
-        AreaOfCircleCalculator areaOfCircleCalculator = new AreaOfCircleCalculator(circleData);
-        SimpleInterestCalculator simpleInterestCalculator = new SimpleInterestCalculator(interestData);
-        ForceCalculator forceCalculator = new ForceCalculator(physicsData);
-        DensityCalculator densityCalculator = new DensityCalculator(physicsData);
-
-        //main Menu
         boolean exit = false;
         while (!exit) {
             System.out.println("\n--- Scientific Equation Calculator Main Menu ---");
@@ -66,29 +22,87 @@ public class CalculatorDriver {
             int choice = scanner.nextInt();
 
             switch (choice) {
-                case 1:
+                case 1: {
+                    //final Velocity Calculator
+                    System.out.println("\n--- Enter Motion Data ---");
+                    System.out.print("Enter Initial Velocity (u): ");
+                    double initialVelocity = scanner.nextDouble();
+                    System.out.print("Enter Acceleration (a): ");
+                    double acceleration = scanner.nextDouble();
+                    System.out.print("Enter Time (t): ");
+                    double time = scanner.nextDouble();
+                    MotionData motionData = new MotionData(initialVelocity, acceleration, time, new BaseData("1", "Motion Data Example"));
+                    FinalVelocityCalculator finalVelocityCalculator = new FinalVelocityCalculator(motionData);
                     finalVelocityCalculator.calculate();
                     break;
-                case 2:
+                }
+                case 2: {
+                    //area of Circle Calculator
+                    System.out.println("\n--- Enter Circle Data ---");
+                    System.out.print("Enter Radius (r): ");
+                    double radius = scanner.nextDouble();
+                    CircleData circleData = new CircleData(radius, new BaseData("2", "Circle Data Example"));
+                    AreaOfCircleCalculator areaOfCircleCalculator = new AreaOfCircleCalculator(circleData);
                     areaOfCircleCalculator.calculate();
                     break;
-                case 3:
+                }
+                case 3: {
+                    //simple Interest Calculator
+                    System.out.println("\n--- Enter Interest Data ---");
+                    System.out.print("Enter Principal (P): ");
+                    double principal = scanner.nextDouble();
+                    System.out.print("Enter Rate (R): ");
+                    double rate = scanner.nextDouble();
+                    System.out.print("Enter Time (T): ");
+                    double time = scanner.nextDouble();
+                    //the mass and acceleration will not be used to calculate the simple interest
+                    //it will be used for the PhysicsData that is part of InterestData
+                    System.out.print("Enter Mass (m) (for dependent PhysicsData): ");
+                    double mass = scanner.nextDouble();
+                    System.out.print("Enter Acceleration (a) (for dependent PhysicsData): ");
+                    double acceleration = scanner.nextDouble();
+                    PhysicsData physicsData = new PhysicsData(mass, acceleration, null, 0.0);
+                    InterestData interestData = new InterestData(principal, rate, time, physicsData);
+                    SimpleInterestCalculator simpleInterestCalculator = new SimpleInterestCalculator(interestData);
                     simpleInterestCalculator.calculate();
                     break;
-                case 4:
+                }
+                case 4: {
+                    //force Calculator
+                    System.out.println("\n--- Enter Physics Data ---");
+                    System.out.print("Enter Mass (m): ");
+                    double mass = scanner.nextDouble();
+                    System.out.print("Enter Acceleration (a): ");
+                    double acceleration = scanner.nextDouble();
+                    MotionData motionData = new MotionData(0.0, acceleration, 0.0, new BaseData("1", "Default Motion Data"));
+                    PhysicsData physicsData = new PhysicsData(mass, acceleration, motionData, 0.0);
+                    ForceCalculator forceCalculator = new ForceCalculator(physicsData);
                     forceCalculator.calculate();
                     break;
-                case 5:
+                }
+                case 5: {
+                    //density Calculator
+                    System.out.println("\n--- Enter Physics Data ---");
+                    System.out.print("Enter Mass (m): ");
+                    double mass = scanner.nextDouble();
+                    System.out.print("Enter Volume (v): ");
+                    double volume = scanner.nextDouble();
+                    PhysicsData physicsData = new PhysicsData(mass, 0.0, null, volume);
+                    DensityCalculator densityCalculator = new DensityCalculator(physicsData);
                     densityCalculator.calculate();
                     break;
-                case 6:
+                }
+                case 6: {
                     exit = true;
                     System.out.println("Exiting the Scientific Equation Calculator");
                     break;
-                default:
+                }
+                default: {
                     System.out.println("Invalid choice. Please try again.");
+                }
             }
         }
+
         scanner.close();
     }
 
