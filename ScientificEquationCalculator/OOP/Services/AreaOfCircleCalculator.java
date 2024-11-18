@@ -16,7 +16,8 @@ public class AreaOfCircleCalculator implements CalculatorInterface {
     public double calculateAreaOfCircle(){
         double PI = Math.PI;
         double radius = circleData.getRadius();
-        return PI*radius;
+        double result = PI*radius*radius;
+        return Math.round(result*Math.pow(10,2))/Math.pow(10,2);
     }
 
     @Override
