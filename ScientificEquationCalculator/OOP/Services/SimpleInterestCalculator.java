@@ -6,7 +6,6 @@ import OOP.Interface.CalculatorInterface;
 import java.util.Scanner;
 
 public class SimpleInterestCalculator implements CalculatorInterface {
-    //this class will use InterestData
     private InterestData interestData;
 
     public SimpleInterestCalculator(InterestData interestData) {
