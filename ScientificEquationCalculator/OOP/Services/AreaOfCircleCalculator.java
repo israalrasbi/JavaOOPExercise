@@ -6,7 +6,6 @@ import OOP.Interface.CalculatorInterface;
 import java.util.Scanner;
 
 public class AreaOfCircleCalculator implements CalculatorInterface {
-    //this class will use CircleData
     private CircleData circleData;
 
     public AreaOfCircleCalculator(CircleData circleData) {
